@@ -1,0 +1,49 @@
+{
+    "scheduled": [
+        {
+            "attendee": "Martin",
+            "interviewer": "interviewer1",
+            "room": 1,
+            "start_time": 9,
+            "end_time": 11
+        },
+        {
+            "attendee": "Jimmy",
+            "interviewer": "interviewer2",
+            "room": 2,
+            "start_time": 9,
+            "end_time": 11
+        },
+        {
+            "attendee": "John",
+            "interviewer": "interviewer1",
+            "room": 1,
+            "start_time": 11,
+            "end_time": 13
+        },
+        {
+            "attendee": "Sandra",
+            "interviewer": "interviewer2",
+            "room": 2,
+            "start_time": 11,
+            "end_time": 13
+        },
+        {
+            "attendee": "Bobby",
+            "interviewer": "interviewer1",
+            "room": 1,
+            "start_time": 15,
+            "end_time": 17
+        },
+        {
+            "attendee": "Denis",
+            "interviewer": "interviewer2",
+            "room": 2,
+            "start_time": 15,
+            "end_time": 17
+        }
+    ],
+    "unscheduled": [
+        "Garnacho"
+    ]
+}

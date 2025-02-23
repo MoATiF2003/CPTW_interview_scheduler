@@ -1,3 +1,4 @@
+import json
 from models.person import Person
 from models.room import Room
 from models.interview import Interview
@@ -28,7 +29,13 @@ class Schedule:
                     for room in room_list:
                         interview = Interview(attendee, interviewer, room, start_time)
                         if interview.book_interview():
-                            scheduled.append(interview)
+                            scheduled.append({
+                                "attendee" : interview.attendee.name,
+                                "interviewer" : interview.interviewer.name,
+                                "room" : interview.room.room_number,
+                                "start_time" : interview.start_time,
+                                "end_time" : interview.end_time
+                            })
                             booked = True
                             break
                     if booked:
@@ -38,12 +45,26 @@ class Schedule:
             if not booked:
                 unscheduled.append(attendee.name)
 
-        print("Scheduled Interview : ")
+        self.save_to_json(scheduled, unscheduled)
+
+        print("Scheduled Interviews:")
         for interview in scheduled:
-            print(interview)
+            print(f"{interview['attendee']} is scheduled with {interview['interviewer']} in Room {interview['room']} from {interview['start_time']} to {interview['end_time']}")
+
         print()
         if unscheduled:
-            print("Could not schedule for : ")
+            print("Could not schedule for:")
             for attendee in unscheduled:
-                print("- ",attendee)
+                print("-", attendee)
+
+    def save_to_json(self, scheduled, unscheduled):
+        data = {
+            "scheduled" : scheduled,
+            "unscheduled" : unscheduled
+        }
+        with open("schedule.json", "w") as f:
+            json.dump(data, f, indent=4)
+        
+
+        
        

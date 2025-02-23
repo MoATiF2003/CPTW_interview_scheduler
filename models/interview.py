@@ -2,7 +2,7 @@ from models.person import Person
 from models.room import Room
 
 class Interview:
-    def __init__(self, attendee, interviewer, room, start_time):
+    def __init__(self, attendee, interviewer, room, start_time): # attendee, interviewer, room -- objects
         self.attendee = attendee
         self.interviewer = interviewer
         self.room = room
