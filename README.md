@@ -1,4 +1,4 @@
-# CPTW_interview_sheduler
+# CPTW_interview_scheduler
 
 ## for testing run this
 ```sh
